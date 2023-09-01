@@ -42,6 +42,17 @@ h2 {
     color: white;
 }
 
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.add-button {
+    background: #126f35;
+    color: white;
+}
+
 .bg-grey {
     background: #6e6764;
 }
