@@ -17,9 +17,9 @@
                 Home Textile
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="home-textile-link">
-                <a href="" class="dropdown-item">Towels</a>
-                <a href="" class="dropdown-item">Curtains</a>
-                <a href="" class="dropdown-item">All Textile</a>
+                <a href="{% url 'products' %}?category=towels" class="dropdown-item">Towels</a>
+                <a href="{% url 'products' %}?category=curtains" class="dropdown-item">Curtains</a>
+                <a href="{% url 'products' %}?category=towels,curtains" class="dropdown-item">All Textile</a>
             </div>
         </li>
 
@@ -28,9 +28,9 @@
                 Home Deco
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="home-deco-link">
-                <a href="" class="dropdown-item">Cushions</a>
-                <a href="" class="dropdown-item">Vases</a>
-                <a href="" class="dropdown-item">All Deco</a>
+                <a href="{% url 'products' %}?category=cushions" class="dropdown-item">Cushions</a>
+                <a href="{% url 'products' %}?category=vases" class="dropdown-item">Vases</a>
+                <a href="{% url 'products' %}?category=cushions,vases" class="dropdown-item">All Deco</a>
             </div>
         </li>
 
@@ -39,9 +39,9 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=new-arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=new-arrivals,deals" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
