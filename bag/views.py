@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.views import generic
 from products.models import Product
+from .models import WishList
 
 
 def view_bag(request):
@@ -67,3 +69,16 @@ def remove_from_bag(request, item_id):
 
     except Exception as e:
         return HttpResponse(status=500)
+
+
+class WishListView(generic.View):
+    """
+    Renders wishlist view
+    """
+
+    def get(self, *args, **kwargs):
+        wish_items = WishList.objects.filter(user=request.user)
+        context = {
+            'wish_items': wish_items
+        }
+        return render(self.request, checkout/wishlist.html, context)
