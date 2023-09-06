@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.shortcuts import HttpResponse
+from django.views import generic
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, WishList
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
@@ -170,3 +171,16 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+class WishListView(generic.View):
+    """
+    Renders wishlist view
+    """
+
+    def get(self, *args, **kwargs):
+        wish_items = WishList.objects.filter(user=request.user)
+        context = {
+            'wish_items': wish_items
+        }
+        return render(self.request, checkout/wishlist.html, context)
