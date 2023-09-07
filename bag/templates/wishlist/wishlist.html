@@ -52,10 +52,14 @@
                                     </td>
                                     <td class="py-3 w-25">
                                         <div class="">
-                                            <form action="">
-                                                <input type="submit" value="Add to Bag" class="btn add-button rounded-0 text-uppercase mt-5">
-                                            </form>
-                                            <form action="">
+                                            <a href="{% url 'product_detail' item.id %}">
+                                                <button type="submit" class="btn add-button rounded-0 text-uppercase mt-5"> 
+                                                        Add to Bag
+                                                </button>
+                                            </a> 
+                                            <form action="{% url 'remove_from_wishlist' %}" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="item-id" value="{{item.id}}">
                                                 <input type="submit" value="Remove" class="btn btn-danger rounded-0 text-uppercase mt-5">
                                             </form>
                                         </div>
