@@ -7,17 +7,22 @@ Project description, goal. Target audience, how are their needs met.
 ## Business and Customer Goals
 Purpose and the value to Users and Business. How it is met. Projects goals and user stories.
 
+### User Stories
+Issues
+
 ## UI/UX Design
 Wireframes, Color Scheme. Mockups
 
 ## Database Design
 ERD diagram (Lucidchart). Realtionships between tables(models).
 
+## Features
+
+### Future features
+
 ## Marketing
 ECommerce business model. Purpose of the appliication. B2C. Marketing Strategies. Facebook
 
-## User Stories
-Issues
 
 ## Testing
 - Responsiveness
@@ -31,9 +36,6 @@ Issues
 ## Technologies Used
 Frameworks, Libraries, Programs
 
-## References and Credits
-Boutique Ado. Media and Content
-
 ## Procedures
 
 ### Deployment
@@ -41,4 +43,7 @@ Boutique Ado. Media and Content
 ### AWS S3 Bucket Creation
 
 ### Stripe Configuration
+
+## References and Credits
+Boutique Ado. Media and Content
 
