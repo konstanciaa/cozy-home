@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from products.models import Product
 from .models import WishList
@@ -72,7 +74,10 @@ def remove_from_bag(request, item_id):
         return HttpResponse(status=500)
 
 
-class WishListView(generic.View):
+class WishListView(LoginRequiredMixin, generic.View):
+    login_url = 'account_login'
+    redirect_field_name = 'login'
+
     def get(self, *args, **kwargs):
         wish_items = WishList.objects.filter(user=self.request.user)
         context = {
@@ -81,7 +86,9 @@ class WishListView(generic.View):
         return render(self.request, 'wishlist/wishlist.html', context)
 
 
+@login_required
 def add_to_wishlist(request):
+
     if request.method == "POST":
         product_wish_id = request.POST.get('product-id')
         product_wish = Product.objects.get(id=product_wish_id)
@@ -97,6 +104,7 @@ def add_to_wishlist(request):
             return HttpResponseRedirect(reverse('wishlist'))
 
 
+@login_required
 def remove_from_wishlist(request):
     if request.method == "POST":
         item_id = request.POST.get('item-id')

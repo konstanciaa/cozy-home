@@ -22,98 +22,120 @@
 
         <div class="row">
             <div class="col">
-                {% if wish_items %}
-                    <div class="table-responsive rounded">
-                        <table class="table table-sm table-borderless">
-                            <thead class="text-black">
-                                <tr>
-                                    <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
+                {% if request.user.is_authenticated %}
+                    {% if wish_items %}
+                        <div class="table-responsive rounded">
+                            <table class="table table-sm table-borderless">
+                                <thead class="text-black">
+                                    <tr>
+                                        <th scope="col">Product Info</th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
 
-                            {% for item in wish_items %}
-                                <tr>
-                                    <td class="p-3 w-25">
-                                        {% if item.product.image %}
-                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                        {% else %}
-                                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                        {% endif %}
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
-                                    </td>
-                                    <td class="py-3 w-25">
-                                        <div class="">
-                                            <form action="{% url 'add_to_bag' item.product.id %}" method="POST">
-                                                {% csrf_token %}
-                                                <div class="form-row">
-                                                    <div class="col-12">
-                                                        <p class="mt-3"><strong>Quantity:</strong></p>
-                                                        <div class="form-group w-50">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <button class="decrement-qty btn btn-grey rounded-0" 
-                                                                        data-item_id="{{ item.product.id }}" id="decrement-qty_{{ item.product.id }}">
-                                                                        <span class="icon">
-                                                                            <i class="fas fa-minus"></i>
-                                                                        </span>
-                                                                    </button>
-                                                                </div>
-                                                                <input class="form-control qty_input" type="number" name="quantity" value="1"
-                                                                    min="1" max="99" data-item_id="{{ item.product.id }}"
-                                                                    id="id_qty_{{ item.product.id }}">
-                                                                <div class="input-group-append">
-                                                                    <button class="increment-qty btn btn-grey rounded-0"
-                                                                        data-item_id="{{ item.product.id }}" id="increment-qty_{{ item.product.id }}">
-                                                                        <span class="icon">
-                                                                            <i class="fas fa-plus"></i>
-                                                                        </span>
-                                                                    </button>
+                                {% for item in wish_items %}
+                                    <tr>
+                                        <td class="p-3 w-25">
+                                            {% if item.product.image %}
+                                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                            {% else %}
+                                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                            {% endif %}
+                                        </td>
+                                        <td class="py-3">
+                                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                        </td>
+                                        <td class="py-3">
+                                            <p class="my-0">${{ item.product.price }}</p>
+                                        </td>
+                                        <td class="py-3 w-25">
+                                            <div class="">
+                                                <form action="{% url 'add_to_bag' item.product.id %}" method="POST">
+                                                    {% csrf_token %}
+                                                    <div class="form-row">
+                                                        <div class="col-12">
+                                                            <p class="mt-3"><strong>Quantity:</strong></p>
+                                                            <div class="form-group w-50">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                        <button class="decrement-qty btn btn-grey rounded-0" 
+                                                                            data-item_id="{{ item.product.id }}" id="decrement-qty_{{ item.product.id }}">
+                                                                            <span class="icon">
+                                                                                <i class="fas fa-minus"></i>
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                                                        min="1" max="99" data-item_id="{{ item.product.id }}"
+                                                                        id="id_qty_{{ item.product.id }}">
+                                                                    <div class="input-group-append">
+                                                                        <button class="increment-qty btn btn-grey rounded-0"
+                                                                            data-item_id="{{ item.product.id }}" id="increment-qty_{{ item.product.id }}">
+                                                                            <span class="icon">
+                                                                                <i class="fas fa-plus"></i>
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                        
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                <input type="submit" class="btn add-button rounded-0 text-uppercase mt-5" value="Add to Bag">
-                                            </form>
-                                            <form action="{% url 'remove_from_wishlist' %}" method="POST">
-                                                {% csrf_token %}
-                                                <input type="hidden" name="item-id" value="{{item.id}}">
-                                                <input type="submit" value="Remove" class="btn btn-danger rounded-0 text-uppercase mt-5">
-                                            </form>
-                                        </div>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                                <tr>
-                                    <td colspan="5" class="text-right">
-                                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </span>
-                                            <span class="text-uppercase">Keep Shopping</span>
-                                        </a>
-                                        <a href="{% url 'checkout' %}" class="btn btn-grey rounded-0 btn-lg">
-                                            <span class="text-uppercase">Secure Checkout</span>
-                                            <span class="icon">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
-                        </table>
-                    </div>
+                            
+                                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                    <input type="submit" class="btn add-button rounded-0 text-uppercase mt-5" value="Add to Bag">
+                                                </form>
+                                                <form action="{% url 'remove_from_wishlist' %}" method="POST">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="item-id" value="{{item.id}}">
+                                                    <input type="submit" value="Remove" class="btn btn-danger rounded-0 text-uppercase mt-5">
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                    <tr>
+                                        <td colspan="5" class="text-right">
+                                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                                <span class="icon">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </span>
+                                                <span class="text-uppercase">Keep Shopping</span>
+                                            </a>
+                                            <a href="{% url 'checkout' %}" class="btn btn-grey rounded-0 btn-lg">
+                                                <span class="text-uppercase">Secure Checkout</span>
+                                                <span class="icon">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="lead mb-5">Your Wishlist is empty.</p>
+                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                    {% endif %}
                 {% else %}
-                    <p class="lead mb-5">Your Wishlist is empty.</p>
+                    <p class="lead mb-5">Please register or login first to be able to add products to your wishlist.</p>
+                    <a href="{% url 'account_signup' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </span>
+                        <span class="text-uppercase">Register</span>
+                    </a>
+                    <a href="{% url 'account_login' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </span>
+                        <span class="text-uppercase">Login</span>
+                    </a>
                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>

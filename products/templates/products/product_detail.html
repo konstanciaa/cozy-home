@@ -92,11 +92,17 @@
                         </div>
                     </form>
                     <div class="form-group w-50">
+                        {% if request.user.is_authenticated %}
                         <form class="form" action="{% url 'add-to-wishlist' %}" method="POST"> 
                             {% csrf_token %}
                             <input type="hidden" name="product-id" value="{{ product.id }}">
                             <input type="submit" class="btn add-wishlist rounded-0 text-uppercase mt-5" value="Add to Wishlist">
                         </form>
+                        {% else %}
+                        <a href="{% url 'wishlist' %}" class="btn add-wishlist rounded-0 text-uppercase mt-5">
+                            <span class="text-uppercase">Add to Wishlist</span>
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

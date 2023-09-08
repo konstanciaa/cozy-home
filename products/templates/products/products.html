@@ -88,15 +88,21 @@
                                                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
+                                            {% if request.user.is_authenticated %}
                                             <form action="{% url 'add-to-wishlist' %}" method="POST">
                                                 {% csrf_token %}
                                                 <input type="hidden" name="product-id" value="{{product.id}}">
                                                 <button type="submit" class="btn">
                                                     <div class="row justify-content-center"> 
-                                                        <i class="fas fa-heart"></i>
+                                                        <i class="fas fa-heart red-heart-hover mr-1 heart-black"></i>
                                                     </div>
                                                 </button>
                                             </form>
+                                            {% else %}
+                                            <p>
+                                                <a href="{% url 'wishlist' %}"><i class="fas fa-heart red-heart-hover mr-1 heart-black"></i></a>
+                                            </p>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>

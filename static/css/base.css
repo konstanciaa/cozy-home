@@ -36,6 +36,14 @@ h2 {
     color: rgb(255, 0, 85);
 }
 
+.red-heart-hover:hover {
+    color: rgb(255, 0, 85);
+}
+
+.heart-black {
+    color: #000;
+}
+
 .shop-now-button {
     background: #0d5328;
     color: white;
