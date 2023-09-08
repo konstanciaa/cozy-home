@@ -31,6 +31,11 @@ h2 {
     width: fit-content;
 }
 
+/* wishlist icon */
+.red-heart {
+    color: rgb(255, 0, 85);
+}
+
 .shop-now-button {
     background: #0d5328;
     color: white;
@@ -50,6 +55,11 @@ h2 {
 
 .add-button {
     background: #126f35;
+    color: white;
+}
+
+.add-wishlist {
+    background: rgb(255, 0, 85);
     color: white;
 }
 
@@ -262,5 +272,9 @@ input[name='q']::placeholder {
 
     body {
         height: calc(100vh - 116px);
+    }
+
+    a {
+        padding: 0 !important;
     }
 }
