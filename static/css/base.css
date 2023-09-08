@@ -44,6 +44,26 @@ h2 {
     color: #000;
 }
 
+/* star rating */
+.checked {
+    color: rgb(255, 204, 0);
+    text-shadow: 1px 1px 3px grey;
+}
+
+.star:hover {
+    color: rgb(255, 204, 0);
+    text-shadow: 1px 1px 3px grey;
+}
+
+.star-active {
+    color: rgb(255, 204, 0);
+    text-shadow: 1px 1px 3px grey;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
 .shop-now-button {
     background: #0d5328;
     color: white;

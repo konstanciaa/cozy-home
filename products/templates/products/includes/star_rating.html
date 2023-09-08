@@ -1,0 +1,8 @@
+<script type="text/javascript">
+    $('.star').on('click', function(){
+        $('.star').removeClass('checked');
+        $('.star').removeClass('star-active');
+        $(this).addClass('checked');
+        $(this).prevAll().addClass('star-active');
+    })
+</script>

@@ -140,6 +140,7 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def review_rate(request):
     if request.method == "GET":
         prod_id = request.GET.get('prod-id')
