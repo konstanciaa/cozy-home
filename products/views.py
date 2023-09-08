@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Review
 from .forms import ProductForm
 
 
@@ -135,3 +135,14 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def review_rate(request):
+    if request.method == "GET":
+        prod_id = request.GET.get('prod-id')
+        product = Product.objects.get(id=prod_id)
+        comment = request.GET.get('comment')
+        rate = request.GET.get('rate')
+        user = request.user
+        Review(user=user, product=product, comment=comment, rate=rate).save()
+        return redirect('product_detail', product_id=prod_id)
