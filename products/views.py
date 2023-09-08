@@ -61,9 +61,12 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    product_rate = Product.objects.get(id=product_id)
+    review = Review.objects.filter(product_review=product_rate)
 
     context = {
         'product': product,
+        'reviews': review,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -140,9 +143,9 @@ def delete_product(request, product_id):
 def review_rate(request):
     if request.method == "GET":
         prod_id = request.GET.get('prod-id')
-        product = Product.objects.get(id=prod_id)
+        product_review = Product.objects.get(id=prod_id)
         comment = request.GET.get('comment')
         rate = request.GET.get('rate')
         user = request.user
-        Review(user=user, product=product, comment=comment, rate=rate).save()
+        Review(user=user, product_review=product_review, comment=comment, rate=rate).save()
         return redirect('product_detail', product_id=prod_id)

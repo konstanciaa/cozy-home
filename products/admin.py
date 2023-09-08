@@ -26,7 +26,7 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'user',
-        'product',
+        'product_review',
         'rate',
         'created_at'
     )
