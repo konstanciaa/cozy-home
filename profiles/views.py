@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import UserProfile
+from .models import UserProfile, Subscribe
 from .forms import UserProfileForm, SubscribeForm
 
 from checkout.models import Order
@@ -65,3 +65,16 @@ def subscribe(request):
         'form': form,
     }
     return render(request, 'profiles/subscribe.html', context)
+
+
+@login_required
+def subscribers(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    subscribers = Subscribe.objects.all()
+    context = {
+        'subscribers': subscribers,
+    }
+    return render(request, 'profiles/subscribers.html', context)

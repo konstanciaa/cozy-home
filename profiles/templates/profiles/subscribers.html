@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Newsletter Subscribers</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive rounded">
+                    <table class="table table-sm">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+
+                        {% for subscriber in subscribers %}
+                            <tr>
+                                <td class="py-3">
+                                    <p class="my-0"><strong>{{ subscriber.name }}</strong></p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">{{ subscriber.email }}</p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
