@@ -5,7 +5,7 @@ html {
 body {
     background: url('/media/background-image-bed.JPG') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(100vh - 204px);
     color: #555;
     font-family: 'Lato';
 }
@@ -214,6 +214,22 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
+textarea {
+    margin-top: 5px;
+    width: 100%;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 50px;
+    margin-top: -50px;
+}
+
+.footer-color {
+	background-color: #0d532874;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -290,6 +306,10 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 164px;
     }
+
+    footer {
+        height: 40px;
+    }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -299,10 +319,14 @@ input[name='q']::placeholder {
     }
 
     body {
-        height: calc(100vh - 116px);
+        height: calc(100vh - 146px);
     }
 
     a {
         padding: 0 !important;
+    }
+
+    footer {
+        height: 30px;
     }
 }

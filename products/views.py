@@ -148,5 +148,9 @@ def review_rate(request):
         comment = request.GET.get('comment')
         rate = request.GET.get('rate')
         user = request.user
-        Review(user=user, product_review=product_review, comment=comment, rate=rate).save()
+        if rate:
+            Review(user=user, product_review=product_review, comment=comment, rate=rate).save()
+        else:
+            messages.error(request, 'Please rate the product.')
+            return redirect('product_detail', product_id=prod_id)
         return redirect('product_detail', product_id=prod_id)

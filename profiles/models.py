@@ -33,3 +33,12 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+
+class Subscribe(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.EmailField(max_length=254, null=False, blank=False)
+
+    def __str__(self):
+        return self.email
