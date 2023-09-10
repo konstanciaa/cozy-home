@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-sfl+%@z4#6-w$#e#0t%jfyyc7dy2e9&+cuo@zms1ob)#4jlyju'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-konstanciaa-cozyhome-z6q9ff9n6po.ws-eu104.gitpod.io', 'my-cozy-home-c15fa3106139.herokuapp.com']
 
