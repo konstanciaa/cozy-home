@@ -104,7 +104,7 @@
                         </a>
                         {% endif %}
                     </div>
-                    <h5 class="text-uppercase font-weight-bold">Reviews</h5>
+                    <h5 class="text-uppercase font-weight-bold mt-5">Reviews</h5>
                     <hr class="mt-0 pt-0">
                     <div class="row">
                         <div class="col-sm-7 mt-2">
@@ -152,7 +152,7 @@
                             </div>
                         </div>
                         {% if user.is_authenticated %}
-                        <input type="submit" class="btn add-button rounded-0 text-uppercase mt-5" value="Post">
+                        <input type="submit" class="btn add-button rounded-0 text-uppercase" value="Post">
                         {% else %}
                         <p>Please <a href="{% url 'account_login' %}">login</a> to leave a review.</p>
                         {% endif %}
