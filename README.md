@@ -103,6 +103,8 @@ ECommerce business model. Purpose of the appliication. B2C. Marketing Strategies
 - Bugs (resolved and unresolved)
 - Lighthouse
 - Validation (HTML, CSS, Python)
+[Validation results](https://github.com/konstanciaa/cozy-home/static/assets/docs/validation/)
+
 - User Stories Testing
 - Features Testing
 
