@@ -110,8 +110,3 @@ def remove_from_wishlist(request):
         item_id = request.POST.get('item-id')
         WishList.objects.filter(id=item_id).delete()
         return HttpResponseRedirect(reverse('wishlist'))
-
-
-def handler404(request, exception):
-    """Error Handler 404 - Page Not Found"""
-    return render(request, "errors/404.html", status=404)

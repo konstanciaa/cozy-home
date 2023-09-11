@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from .views import handler404
 
 urlpatterns = [
     path('', views.view_bag, name='view_bag'),
@@ -11,5 +10,3 @@ urlpatterns = [
     path('add-to-wishlist', views.add_to_wishlist, name='add-to-wishlist'),
     path('remove_from_wishlist', views.remove_from_wishlist, name='remove_from_wishlist'),
 ]
-
-handler404 = 'bag.views.handler404'
