@@ -4,6 +4,10 @@
 
 Cozy Home is an E-Commerce website for an online store named “Cozy Home”. Users can see products by categories and purchase them online. Users can register a profile, add products to wishlist, leave reviews, save delivery information, subscribe for a newsletter.
 
+The website is designed to be responsive on a range of devices.
+
+![Am I Responsive screenshot](static/assets/docs/responsive.png)
+
 ## Business and Customer Goals
 
 The business model is B2C (Business to Customer). Customers can purchase goods online making individual card payments through the Stripe payment system.
@@ -84,10 +88,36 @@ Click on a user story to see the details.
 
 
 ## UI/UX Design
-Wireframes, Color Scheme. 
+
+### Color Scheme
+
+There is a big image of a cozy bedroom on the home page. The page gives an idea what is the website about and sets an appropriate mood.
+
+The color scheme comes mainly from the home page image.
+
+![Color scheme screenshot](static/assets/docs/color-scheme.png)
+
+I added bright green color (#0d5328) for "Shop now" and "Add to bag" buttons. 
+
+rgb(255, 0, 85) - for wishlist
+
+### Wireframes
+
+Home page
+![Home page wireframe screenshot](static/assets/docs/home-page-frame.png)
+
+All products page
+![Products page wireframe screenshot](static/assets/docs/all-products-frame.png)
+
+Product detail page
+![Product detail page wireframe screenshot](static/assets/docs/product-detail-frame.png)
+
+Bag page
+![Bag page wireframe screenshot](static/assets/docs/bag-frame.png)
 
 ## Database Design
 ![database models screenshot](static/assets/docs/database-models.png)
+
 
 ## Features
 
@@ -103,7 +133,7 @@ ECommerce business model. Purpose of the appliication. B2C. Marketing Strategies
 - Bugs (resolved and unresolved)
 - Lighthouse
 - Validation (HTML, CSS, Python)
-[Validation results](https://github.com/konstanciaa/cozy-home/static/assets/docs/validation/)
+[Validation results](https://github.com/konstanciaa/cozy-home/tree/main/static/assets/docs/validation)
 
 - User Stories Testing
 - Features Testing
