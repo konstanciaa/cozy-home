@@ -79,3 +79,8 @@ def subscribers(request):
         'subscribers': subscribers,
     }
     return render(request, 'profiles/subscribers.html', context)
+
+
+def useful_links(request):
+
+    return render(request, 'profiles/useful_links.html')

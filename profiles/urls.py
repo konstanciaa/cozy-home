@@ -7,4 +7,5 @@ urlpatterns = [
          name='order_history'),
     path('subscribe/', views.subscribe, name='subscribe'),
     path('subscribers/', views.subscribers, name='subscribers'),
+    path('useful_links/', views.useful_links, name='useful_links'),
 ]

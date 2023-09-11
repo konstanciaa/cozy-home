@@ -8,6 +8,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description"
+            content="Nice and useful things to make your house instantly cozy. Cushions, curtains, vases, towels.">
+        <meta name="keywords"
+            content="cozy home, cozy atmosphere, soft towel, cotton bath towels, vases, linen curtains, red blackout curtains">
     {% endblock %}
 
     {% block extra_meta %}
@@ -100,10 +104,12 @@
                                     <a href="{% url 'subscribers' %}" class="dropdown-item">Subscribers</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'useful_links' %}" class="dropdown-item">Useful links</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'useful_links' %}" class="dropdown-item">Useful links</a>
                             {% endif %}
                         </div>
                     </li>
