@@ -94,12 +94,16 @@ def add_to_wishlist(request):
         product_wish = Product.objects.get(id=product_wish_id)
 
         try:
-            wish_item = WishList.objects.get(user=request.user, product=product_wish)
+            wish_item = WishList.objects.get(user=request.user,
+                                             product=product_wish)
             if wish_item:
-                messages.info(request, f'{product_wish.name} is already in your Wishlist')
+                messages.info(
+                    request,
+                    f'{product_wish.name} is already in your Wishlist')
         except:
             WishList.objects.create(user=request.user, product=product_wish)
-            messages.success(request, f'Added {product_wish.name} to your Wishlist')
+            messages.success(request,
+                             f'Added {product_wish.name} to your Wishlist')
         finally:
             return HttpResponseRedirect(reverse('wishlist'))
 

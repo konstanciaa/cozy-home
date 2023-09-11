@@ -27,7 +27,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-konstanciaa-cozyhome-z6q9ff9n6po.ws-eu104.gitpod.io', 'my-cozy-home-c15fa3106139.herokuapp.com']
+ALLOWED_HOSTS = ['8000-konstanciaa-cozyhome-z6q9ff9n6po.ws-eu104.gitpod.io',
+                 'my-cozy-home-c15fa3106139.herokuapp.com']
 
 
 # Application definition
