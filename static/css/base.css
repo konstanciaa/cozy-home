@@ -1,17 +1,12 @@
 html {
-    /* from boutique ado */
-    /* height: 100%; */
-    /* experiment with footer */
     height: -webkit-fill-available;
 }
 
 body {
     background: url('/media/background-image-bed.JPG') no-repeat center center fixed;
     background-size: cover;
-    /* height: calc(100vh - 204px); */
     color: #555;
     font-family: 'Lato';
-    /* experiment with footer */
     display: flex;
     flex-direction: column;
     height: 100vh;

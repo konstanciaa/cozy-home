@@ -12,6 +12,27 @@ The website is designed to be responsive on a range of devices.
 
 The business model is B2C (Business to Customer). Customers can purchase goods online making individual card payments through the Stripe payment system.
 
+#### Overview
+Cozy Home is a website for an online store. The main goal of the website is to allow users to view the products and to buy them online. Also the website makes it possible for users to add products to a wishlist, to save delivery information on a personal profile page, to subscribe for a newsletter, and to read and leave reviews.
+
+#### Site User
+- Someone who is an interior designer.
+- Someone whose hobby is interior design.
+- Someone looking for new bed linen or towels.
+- Someone who prefers online shopping.
+
+#### Goals for the website
+- To allow customers to view the products, their images, description, price.
+- To allow customers to add products to a wishlist.
+- To allow customers to add products to a shopping bag.
+- To allow customers to make secure online payment.
+- To allow customers to receive a confirmation email after checkout.
+- To allow customers to subscribe for a newsletter.
+- To allow customers to save their delivery information on a personal profile page.
+- To allow store owner to add, edit and delete products.
+- To allow store owner to view the list of subscribers.
+
+
 ### User Stories
 
 #### Completed User Stories
@@ -54,37 +75,36 @@ Click on a user story to see the details.
 
 18. [USER STORY: Order confirmation](https://github.com/konstanciaa/cozy-home/issues/19)
 
-19. [USER STORY: Add products](https://github.com/konstanciaa/cozy-home/issues/21)
+19. [USER STORY: Email confirmation](https://github.com/konstanciaa/cozy-home/issues/20)
 
-20. [USER STORY: Update products](https://github.com/konstanciaa/cozy-home/issues/22)
+20. [USER STORY: Add products](https://github.com/konstanciaa/cozy-home/issues/21)
 
-21. [USER STORY: Delete products](https://github.com/konstanciaa/cozy-home/issues/23)
+21. [USER STORY: Update products](https://github.com/konstanciaa/cozy-home/issues/22)
 
-22. [USER STORY: Leave a review](https://github.com/konstanciaa/cozy-home/issues/24)
+22. [USER STORY: Delete products](https://github.com/konstanciaa/cozy-home/issues/23)
 
-23. [USER STORY: Read reviews](https://github.com/konstanciaa/cozy-home/issues/26)
+23. [USER STORY: Leave a review](https://github.com/konstanciaa/cozy-home/issues/24)
 
-24. [USER STORY: Subscribe for a newsletter](https://github.com/konstanciaa/cozy-home/issues/27)
+24. [USER STORY: Read reviews](https://github.com/konstanciaa/cozy-home/issues/26)
 
-25. [USER STORY: View the wishlist](https://github.com/konstanciaa/cozy-home/issues/29)
+25. [USER STORY: Subscribe for a newsletter](https://github.com/konstanciaa/cozy-home/issues/27)
 
-26. [USER STORY: Remove from wishlist](https://github.com/konstanciaa/cozy-home/issues/30)
+26. [USER STORY: View the wishlist](https://github.com/konstanciaa/cozy-home/issues/29)
 
-27. [USER STORY: Add to bag from wishlist](https://github.com/konstanciaa/cozy-home/issues/31)
+27. [USER STORY: Remove from wishlist](https://github.com/konstanciaa/cozy-home/issues/30)
 
-28. [USER STORY: List of subscribers](https://github.com/konstanciaa/cozy-home/issues/32)
+28. [USER STORY: Add to bag from wishlist](https://github.com/konstanciaa/cozy-home/issues/31)
 
+29. [USER STORY: List of subscribers](https://github.com/konstanciaa/cozy-home/issues/32)
 
 
 #### Future features user stories
 
 1. [USER STORY: Recover password](https://github.com/konstanciaa/cozy-home/issues/8)
 
-2. [USER STORY: Email confirmation](https://github.com/konstanciaa/cozy-home/issues/20)
+2. [USER STORY: Moderate reviews](https://github.com/konstanciaa/cozy-home/issues/25)
 
-3. [USER STORY: Moderate reviews](https://github.com/konstanciaa/cozy-home/issues/25)
-
-4. [USER STORY: Check a box to subscribe](https://github.com/konstanciaa/cozy-home/issues/28)
+3. [USER STORY: Check a box to subscribe](https://github.com/konstanciaa/cozy-home/issues/28)
 
 
 ## UI/UX Design
@@ -120,6 +140,79 @@ Shopping bag page
 
 
 ## Features
+
+#### User based Features Implemented
+
+- **Users can** register on a website
+- **Users can** log into their account
+- **Users can** log out of their account
+- **Users can** view all the products and their details
+- **Users can** search products on the website
+- **Users can** sort the products by categories, price, rating
+- **Users can** read and leave reviews
+- **Users can** add products to wishlist
+- **Users can** delete products from wishlist
+- **Users can** add products to bag
+- **Users can** add products from wishlist to bag
+- **Users can** adjust quantity of products in their wishlist
+- **Users can** adjust quantity of products in their shopping bag
+- **Users can** make a secure online payment
+- **Users can** subscribe for a newsletter
+- **Users can** save their delivery information on their profile
+- **Users can** update their personal information on their profile
+
+
+#### User Restrictions
+- **Users cannot** access the subscription form until they sign up or login
+- **Users cannot** access wishlist until they sign up or login
+- **Users cannot** leave a review until they sign up or login
+- **Users cannot** see other users profiles
+- **Users cannot** see other users wishlists
+- **Users cannot** see subscribers list
+- **Users cannot** add, edit or delete products
+
+#### Business owner based Features implemented
+
+- **Business owner can** add products **(Create)**
+- **Business owner can** view all products **(Read)**
+- **Business owner can** edit products **(Update)**
+- **Business ownern can** delete products **(Delete)**
+- **Business owner can** view the list of subscribers
+
+### Website Features
+
+#### Navigation
+
+- The navigation is located at the top of the page. It shows the store name in the left corner: COZY HOME that links to home page.
+- The other navigation links are: All Products, Home Textile, Home Deco, Special Offers which link to different categories of products.
+- A search bar is located above the product categories link.
+- Wishlist, My Account and Bag icons function as links to these pages.
+
+![navigation screenshot](static/assets/docs/navbar.png)
+
+#### Home page
+- Home page displays a photo of a cozy bedroom.
+- The big green button calls to action "Shop Now".
+- After clicking the button, users are being redirected to products page.
+- The information about free delivery condition is at the top of the image, between navigation links and hero image.
+
+![home page screenshot](static/assets/docs/home-page.png)
+
+#### Footer
+- Users can see a Subscribe button which redirects them to subscription page. If the user is not registered or not logged in, they are being redirect to login page.
+- The Follow button opens the store's Facebook page in a new tab.
+
+![footer screenshot](static/assets/docs/footer.png)
+
+#### Products
+- User can see all products, their names, prices, categories, rating under images.
+- The heart icon under each product enables users to add a product to a wishlist. If the user isn't logged in, they are being redirected to login page first.
+- Users can tap a product image to see more details about the product.
+- "Sort by..." bar ebnables users to sort products by categories, price, name, rating in different directions.
+
+![products page screenshot](static/assets/docs/all-products.png)
+
+
 
 ### Future features
 
