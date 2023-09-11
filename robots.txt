@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://my-cozy-home-c15fa3106139.herokuapp.com/sitemap.xml
