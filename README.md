@@ -91,7 +91,7 @@ Click on a user story to see the details.
 
 ### Color Scheme
 
-There is a big image of a cozy bedroom on the home page. The page gives an idea what is the website about and sets an appropriate mood.
+There is a big image of a cozy bedroom on the home page. The page gives an idea of what is the website about and sets an appropriate mood.
 
 The color scheme comes mainly from the home page image.
 
@@ -109,10 +109,10 @@ Home page
 All products page
 ![Products page wireframe screenshot](static/assets/docs/all-products-frame.png)
 
-Product detail page
+Product details page
 ![Product detail page wireframe screenshot](static/assets/docs/product-detail-frame.png)
 
-Bag page
+Shopping bag page
 ![Bag page wireframe screenshot](static/assets/docs/bag-frame.png)
 
 ## Database Design
@@ -125,6 +125,12 @@ Bag page
 
 ## Marketing
 ECommerce business model. Purpose of the appliication. B2C. Marketing Strategies. Facebook
+
+#### Facebook business page.
+
+Tap [here](https://www.facebook.com/mycozyhomehere/) to see the page on Facebook.
+
+![Facebook page screenshot](static/assets/docs/facebook-page.png)
 
 
 ## Testing
