@@ -212,6 +212,114 @@ Shopping bag page
 
 ![products page screenshot](static/assets/docs/all-products.png)
 
+#### Product details page
+- Users can tap a product image on products page to see more details about the product.
+- On Product details page users can read a description and reviews.
+- Users can select the needed quantity and add a product to their shopping bag by clicking "Add to bag" button.
+- Users can get back to products page by clicking "Keep shopping" button.
+- Users can add a product to their wishlist by clicking "Add to wishlist" button.
+
+![products details page screenshot](static/assets/docs/product-details.png)
+
+#### Reviews and ratings
+- Users can read reviews on products details page.
+- Users can leave a review and rate a product when they are logged in.
+
+![review and rating form screenshot](static/assets/docs/review-rate.png)
+![reviews screenshot](static/assets/docs/reviews.png)
+
+#### Wishlist
+- Logged in users can add products to their wishlist.
+- Users are being redirected to their wishlist when they add a product.
+- Users can tap a heart icon in th etop right corner to view their wishlist.
+- When users are on the wishlist page, the icon is red color.
+- Users can adjust quantity of a product and add it to a bag.
+- Users can remove a product from their wishlist.
+- Users can click "Keep shopping" button to get back to products page.
+- Users can click "Secure checkout" button to proceed to checkout.
+- Users can see a bag icon with total price in the top right corner of the page.
+- Users can click a bag icon to get to a shopping bag page.
+
+![wishlist page screenshot](static/assets/docs/wishlist.png)
+
+#### Shopping bag page
+- Users can see the products the added to the bag.
+- Users can adjust quantity of each product.
+- Users can see a product's price and subtotal price, which depends on a product's quantity.
+- In the bottom right corner users can see bag total, delivery costs, grand total, and how much they can spend to get free delivery.
+- "Keep shopping" button redirects users to products page.
+- "Secure checkout" opens checkout page.
+
+![shopping bag page screenshot](static/assets/docs/shopping-bag.png)
+
+#### Checkout page
+- Users can see products which they added to thei rshopping bag, their quantity and price.
+- Users can see delivery costs and grand total.
+- Users can fill out the form with their delivery information.
+- Users can click a checkbox to save their delivery information to their profile so they don't have to enter it next time.
+- Users can secure enter their card details.
+- Users can click "Adjust bag" button to get back to shopping bag page.
+- Users can click "Complete order" button to make a purchase. After that their card will be charged.
+
+![checkout form page screenshot](static/assets/docs/checkout.png)
+![checkout card form and buttons screenshot](static/assets/docs/checkout-card.png)
+
+#### Sign Up page
+- Users can fill out he form to register on the website.
+
+![signup form page screenshot](static/assets/docs/signup.png)
+
+#### Login page
+- Users can enter their username or email and password to log into their account.
+
+![Sign in form page screenshot](static/assets/docs/signin.png)
+
+#### Profile
+- Users can view their personal profile page.
+- Users can see their delivery information if they clicked a checkbox to save it to their profile when making an order.
+- On the right side of the page users can view their order history.
+- Users can update theur delivery information simply by entering new details and clicking "Update information" button.
+
+![profile page screenshot](static/assets/docs/profile.png)
+
+#### Subscription
+- Logged in users can subscribe to a newsletter.
+- "Subscribe" button is located at the bottom of the home page.
+- If users are not logged in, they are being redirected to login page after clicking "Subscribe" button.
+- Users can use the form to enter their name and email.
+- After clicking "Subscribe" button under the form, users are successfully subscribed.
+
+![subscription form screenshot](static/assets/docs/subscribe.png)
+
+#### Useful links
+- Users can see a navigation link to Useful links page when clicking "My Account" icon.
+- On Useful links page users can see and follow links to external resources, such as blog posts, articles or YouTube videos related to website's specialization.
+- Users can click "Keep shopping" button to get to products page.
+
+![useful links navigation in menu screenshot](static/assets/docs/useful-nav.png)
+![useful links page screenshot](static/assets/docs/useful-links.png)
+
+#### Store Owner functionality
+- Store owners can access additional features by clicking "My Account" icon in navigation.
+- Store owners have additional access to Product management and Subscribers page
+
+![store owner links in navbar screenshot](static/assets/docs/admin-links.png)
+
+#### Product management
+- Store owners can fill the form to add a new product.
+
+![Add product form screenshot](static/assets/docs/add-product-1.png)
+![Add product form second screenshot](static/assets/docs/add-product-2.png)
+
+- Store owners can edit or delete products by clicking "Edit" or "Delete" on Products or Product detail page.
+
+![edit product product page acreenshot](static/assets/docs/edit-product.png)
+![delete product product detail page screenshot](static/assets/docs/delete-product.png)
+
+#### Newsletter subscribers
+- Store owner can see a list of subscribers, their names and emails.
+
+![subscribers list screenshot](static/assets/docs/subscribers.png)
 
 
 ### Future features
