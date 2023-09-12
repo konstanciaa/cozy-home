@@ -10,7 +10,7 @@ The website is designed to be responsive on a range of devices.
 
 ## Business and Customer Goals
 
-The business model is B2C (Business to Customer). Customers can purchase goods online making individual card payments through the Stripe payment system.
+The business model is B2C (Business to Customer) E-Commerce online store. Customers can purchase goods online making individual card payments through the Stripe payment system.
 
 #### Overview
 Cozy Home is a website for an online store. The main goal of the website is to allow users to view the products and to buy them online. Also the website makes it possible for users to add products to a wishlist, to save delivery information on a personal profile page, to subscribe for a newsletter, and to read and leave reviews.
@@ -117,9 +117,9 @@ The color scheme comes mainly from the home page image.
 
 ![Color scheme screenshot](static/assets/docs/color-scheme.png)
 
-I added bright green color (#0d5328) for "Shop now" and "Add to bag" buttons. 
+Bright green color (#0d5328) is used for "Shop now" and "Add to bag" buttons. 
 
-rgb(255, 0, 85) - for wishlist
+rgb(255, 0, 85) - is used for wishlist
 
 ### Wireframes
 
@@ -324,29 +324,88 @@ Shopping bag page
 
 ### Future features
 
+- Users can check a box on checkout page to subscribe for a newsletter.
+- Users can recover password.
+- Store owner can moderate reviews.
+- Store owner can send a newsletter filling the form on the website.
+
 ## Marketing
-ECommerce business model. Purpose of the appliication. B2C. Marketing Strategies. Facebook
+
+### Business model
+This project is based on E-Commerce B2C business model.
+Customers can purchase goods online making individual card payments through the Stripe payment system.
+
+### Purpose of the application
+Cozy Home is a website for an online store. The main goal of the website is to allow users to view the products and to buy them online. Also the website makes it possible for users to add products to a wishlist, to save delivery information on a personal profile page, to subscribe for a newsletter, to read and leave reviews.
+
+### Marketing strategies
+Free web marketing strategies are used for this E-Commerce project.
+- SEO and content marketing
+- Social media marketing (Facebook)
+- Email marketing (Newsletter subscription)
+
+#### SEO
+Search Engine Optimization (SEO) techniques are used in this project to  optimize the web page and content for better search engine rankings.
+- Keywords and descriptive meta tags
+- External links with rel attributes and aria-labels
+- robots.txt
+- sitemap.xml
 
 #### Facebook business page.
+- Customers can easily locate Facebook page link at the bottom of the home page.
+- Customers can tap the link to open store's facebook business page.
+- Customers can follow the page to be regularly informed about new arrivals or special offers. This will increase customers' awareness and loyalty. 
 
 Tap [here](https://www.facebook.com/mycozyhomehere/) to see the page on Facebook.
 
 ![Facebook page screenshot](static/assets/docs/facebook-page.png)
 
+#### Newsletter subscription
+
+- Users can subscribe for a newsletter by filling the form on the website. Store owners can email newsletter informing customers about new arrivals or special offers. It will help to gain new customers or retain existing ones
+- After implementing "Future features" section, users will be able to check a box to subscribe for a newsletter while checking out. More users will be willing to subscribe as it doesn't take time and additional efforts to fill out the form. That will increase customers' loyalty. 
+
+![subscribe button in footer screenshot](static/assets/docs/footer.png)
+![subscription form screenshot](static/assets/docs/subscribe.png)
 
 ## Testing
-- Responsiveness
-- Browser Compatibility
-- Bugs (resolved and unresolved)
-- Lighthouse
-- Validation (HTML, CSS, Python)
+- **Responsiveness**
+[Am I responsive](https://github.com/konstanciaa/cozy-home/blob/main/static/assets/docs/responsive.png)
+- **Lighthouse** [Result](https://github.com/konstanciaa/cozy-home/tree/main/static/assets/docs/validation/lighthouse.png/)
+- **Validation** (HTML, CSS, Python)
 [Validation results](https://github.com/konstanciaa/cozy-home/tree/main/static/assets/docs/validation)
+- **Bugs**
 
-- User Stories Testing
-- Features Testing
+Subscription form wouldn't submit. The issue was with user's id. There was IntegrityError at /profile NOT NULL constraint failed. This [Stackoverflow post](https://stackoverflow.com/questions/66662129/integrityerror-at-profile-not-null-constraint-failed-tutorapp-profile-user-id) helped me to resolve the bug. 
+
+- **User Stories Testing** and **Features Testing** can be found [here](https://github.com/konstanciaa/cozy-home/tree/main/docs/testing.md)
+
 
 ## Technologies Used
-Frameworks, Libraries, Programs
+- [HTML](https://en.wikipedia.org/wiki/HTML) - used for creating templates
+- [CSS](https://en.wikipedia.org/wiki/CSS) - used for custom styling
+- [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) - CSS Framework used for developing responsive and mobile-first websites
+- [JavaScript](https://www.javascript.com/) - programming language used to make web pages interactive
+- [Python](https://www.python.org/) - high-level general-purpose programming language used to write the code for the project
+- [Django](https://www.djangoproject.com/) - Python framework used to build the project
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - Django pre-built package used for authentification
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/index.html#) - Django app used to manage Django forms
+- [django-storages](https://django-storages.readthedocs.io/en/latest/) - Django library used to connect the project to Amazon S3 Bucket
+- [Amazon S3 bucket](https://aws.amazon.com/s3/) - AWS web-based cloud storage service used for storing static and media files
+- [Heroku](https://dashboard.heroku.com/apps) - cloud platform used for deployment
+- [Stripe](https://stripe.com/en-gb) - used to take payments
+- [Font Awesome](https://fontawesome.com/) - used for icons
+- [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools) - used for manual testing and responsiveness
+- [GitHub](https://github.com/) - used to host repo
+- [Git](https://git-scm.com/) - used for version control
+- [Gitpod](https://www.gitpod.io/) - used as IDE
+- [Miro](https://miro.com/) - used to create ERD and wireframes
+- [ElephantSQL](https://www.elephantsql.com/) - as database
+- [favicon.io](https://favicon.io/) - used for favicon
+- [Am I Responsive](https://ui.dev/amiresponsive/) - used for responsive image mockup
+- [Django Secret Key Generator](https://djecrety.ir/) - used to generate secret keys for the project
+- [Canva](https://www.canva.com/) - used for resizing images and picking the colors from the images
+- [Font Awesome](https://fontawesome.com/) - was used for icons in navbar, footer and on the buttons "Secure checkout", "Keep shopping".
 
 ## Procedures
 
@@ -377,56 +436,47 @@ The project's repo was hosted on GitHub and deployed on Heroku
      'default': dj_database_url.parse('your-database-url-here')
  }
 `
-
 - In the terminal, run the showmigrations command to confirm you are connected to the external database. `python3 manage.py showmigrations`
-
 - Migrate your database models to your new database.
-
 - Create a superuser for your new database. `python3 manage.py createsuperuser`
-
 - Install gunicorn
-
 - Freeze requirements 
-
 - Create Procfile
-
 - Disable collectstatic on Heroku
-
 - Add the hostname of Heroku app to ALLOWED_HOSTS in settings.py
-
+- Uncomment previous database code in settings.py and comment out the new lines. So we don't push our database link.
 - Deploy an app
-
 
 ### Connecting Heroku to Github
 
 By connecting Heroku to Github the application will automatically deploy the latest code to Heroku.
 
-- in heroku app, open app, in "Deploy" tab, under the "Deployment method" setting select "GitHub"
-- search for repository and click "Connect"
-- choose "Enable Automatic Deploys"
-- modify `settings.py` to use environment variables
-- add the environment variables to Heroku
-- confirm Heroku to Github connection
+- In heroku app, open app, in "Deploy" tab, under the "Deployment method" setting select "GitHub"
+- Search for repository and click "Connect"
+- Choose "Enable Automatic Deploys"
+- Modify `settings.py` to use environment variables
+- Add the environment variables to Heroku
+- Confirm Heroku to Github connection
 
 ### The Development Environment
 
 Set up a local development environment so that you don't have to change any settings to run the project in gitpod.
 
-- modify `settings.py`:
+- Modify `settings.py`:
   - create a new "development" variable
   - set "Debug" to development
   - modify the "DATABASES" configuration and add an if statement
   - add a "localhost" as an ALLOWED_HOST if development = True
   - else use the HEROKU_HOSTNAME environment variable
-- add a new environment variable set to TRUE
-- restart workspace
-- run server
+
 
 ### Config vars
 
-A series of config vars have to be created in Heroku, to conect the app to Django, AWS, stripe and email.
+A series of config vars have to be created in Heroku, to conect the app to Django, AWS, Stripe and Gmail.
 
 The final list of config vars in Heroku can be seen below
+
+![Configuration variables Heroku screenshot](static/assets/docs/config-var.png)
 
 ### Github
 
@@ -455,11 +505,52 @@ The final list of config vars in Heroku can be seen below
 
 
 ### AWS S3 Bucket Creation
+- Register an account
+- Search S3 service
+- Create a bucket
+- Set Object Ownership to ACLs enabled (Bucket owner preferred)
+- Set CORS configuration to `[
+{
+"AllowedHeaders": [
+"Authorization"
+],
+"AllowedMethods": [
+"GET"
+],
+"AllowedOrigins": [
+"*"
+],
+"ExposeHeaders": []
+}
+]`
+- For the Access control list (ACL) section, click edit and enable List for Everyone (public access) and
+accept the warning box.
 
-### Stripe Configuration
+- Identify and Access Management (IAM)
+  - Create group.
+  - Create policy.
+  - Attach policy. To attach the policy, on the sidebar, click User Groups. Select your group, go to the permissions tab, open the Add permissions dropdown, and click Attach policies. Select the policy and click Add permissions at the bottom.
+
+- Retrieve access keys
+  - Go to IAM and select 'Users'
+  - Select the user for whom you wish to create a CSV file.
+  - Select the 'Security Credentials' tab
+  - Scroll to 'Access Keys' and click 'Create access key'
+  - Select 'Application running outside AWS', and click next
+  - On the next screen, you can leave the 'Description tag value' blank. Click 'Create Access Key'
+  - Click the 'Download .csv file' button.
 
 ## References and Credits
-Boutique Ado. 
+- Code Institute's walkthrough project [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) was used as a boilerplate for this project.
+- All images are taken from [Pexels](https://www.pexels.com/)
+- [codepiep](https://youtu.be/A8rarkE0TKQ?si=e786WPFV2NEdOo5M) YouTube tutorial helped me to implement wishlist functionality.
+- [Coding Stuff](https://youtu.be/reFJ9hBLFUY?si=upL6Vv_IbVSXQ6dZ) and [David Gilliam](https://youtu.be/3VW1ws88MKc?si=h3pPvE80rkfs9Bba) YouTube tutorials helped me to implement review and rating functionalities.
+- [Python Lessons](https://youtu.be/wl4Yxo5_Cgw?si=Gk00Y6rJjsd2yGNB) and [KenBroTech](https://youtu.be/hWtlskOaFNI?si=4TGFnWy9YDDdXIit) YouTube tutorials helped me to implement newsletter subscription functionality.
 
-Media and Content. Pexels
+### Acknowledgements
 
+#### Brian O'Hare
+My mentor who provided me with constructive feedback and guidance throughout the project.
+
+#### The tutors at Code institute
+To all the tutors in CI, thank you for your help. Special shout outs to Gemma and Oisin.
